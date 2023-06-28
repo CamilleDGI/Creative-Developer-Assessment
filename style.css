@@ -1,0 +1,23 @@
+body {
+    background-image: url("./images/background.png")
+}
+
+.female {
+    width: 60%;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+.female {
+    opacity: 0;
+    transition: opacity is ease-in-out;
+}
+
+
+.headline1 {
+    width: 80%;
+    position: relative;
+    margin-top: 10%;
+}
