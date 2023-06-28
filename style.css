@@ -4,20 +4,71 @@ body {
 
 .female {
     width: 60%;
-    display:block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    display: block;
+    margin-top: 10% auto;
+    position: relative;
 }
 
 .female {
     opacity: 0;
-    transition: opacity is ease-in-out;
 }
 
 
 .headline1 {
     width: 80%;
+    opacity: 0;
+    transition: opacity 0.5s;
     position: relative;
-    margin-top: 10%;
 }
+
+.headline2 {
+    width: 50%;
+    top: 20%;
+    opacity: 0;
+
+}
+
+.headline2 {
+    position: absolute;
+}
+.container {
+    height: 100vh;
+}
+
+.learnmore {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 10% auto;
+    position: relative;
+    opacity: 0;
+}
+.logo {
+    position: absolute;
+    width: 30%;
+    top: 5%;
+    opacity: 0;
+    margin-left: 60%;
+}
+.subheadline {
+    position: absolute;
+    width: 30%;
+    top: 40%;
+    opacity: 0;
+    margin-left: 60%;
+}
+
+
+.replay {
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 10% auto;
+    position: relative;
+    opacity: 0;
+}
+ 

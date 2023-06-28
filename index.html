@@ -1,24 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Creative Developer Assessment</title>
 </head>
 <body>
-    <div class="page1">
-        <img src="./images/female.png" alt="female" class="female" id="female">
-        <img src="./images/headline1.png" alt="headline1" class="headline1" id="headline1">
+    <div class="container" id="container">
+        <div class="page1">
+            <img src="./images/female.png" alt="female" class="female" id="female1">
+            <img src="./images/headline1.png" alt="headline1" class="headline1" id="headline1A">
+        </div>
+        <div class="page2">
+            <img src="./images/headline2.png" alt="headline2" class="headline2" id="headline2A">
+            <img src="./images/subheadline.png" alt="subheadline" class="subheadline" id="subheadline1">
+            <img src="./images/logo.png" alt="logo" class="logo" id="logo1">
+        </div>
+        <div class="page3">
+            <img src="./images/learnmore.png" alt="learnmore" class="learnmore" id="learnmore1">
+            <img src="./images/replay.png" onclick="replayAnimation()" alt="replay" class="replay" id="replay1">
+        </div>
     </div>
-    
 </body>
 
-<script>
+<script type="text/javascript">
     window.addEventListener('load', function() {
-      var image = document.getElementById('female');
-      image.classList.add('show');
-    });
+    const female = document.getElementById('female1');
+    female.style.opacity = '1';
+    female.style.transition = 'opacity 0.5s';
+
+    const headline1 = document.getElementById('headline1A');
+    const currentPosition1 = headline1.getBoundingClientRect().left;
+    headline1.style.opacity = '1';
+    headline1.style.transition = 'none';
+    headline1.style.left = (currentPosition1 - headline1.offsetWidth) + 'px';
+    void headline1.offsetWidth;
+    headline1.style.transition = 'left 0.5s';
+    headline1.style.left = currentPosition1 + 'px';
+
+    const headline2 = document.getElementById('headline2A');
+    headline2.addEventListener('transitionend', function() {
+        const container = document.getElementById('container');
+        const currentPosition3 = headline1.getBoundingClientRect().right;
+        headline1.style.opacity = '0';
+        headline1.style.transition = 'opacity 0.5s';
+        headline1.style.right = (currentPosition3 - headline1.offsetWidth) + 'px';
+        void headline1.offsetWidth;
+        headline1.style.transition = 'right 0.5s';
+        headline1.style.right = currentPosition3 + 'px';
+    }, { once: true });
+
+    female.addEventListener('transitionend', function() {
+        female.style.transition = 'opacity 0.3s';
+        female.style.opacity = '0';
+
+        const container = document.getElementById('container');
+        const containerWidth = container.offsetWidth;
+        const currentPosition2 = headline2.getBoundingClientRect().left;
+        headline2.style.opacity = '1';
+        headline2.style.transition = 'none';
+        headline2.style.left = (containerWidth - currentPosition2) + 'px';
+        void headline2.offsetWidth;
+        headline2.style.transition = 'left 0.5s';
+        headline2.style.left = '0px';
+    }, { once: true });
+
+    const subheadline = document.getElementById('subheadline1');
+    headline2.addEventListener('transitionend', function() {
+        subheadline.style.opacity = '1';
+        subheadline.style.transition = 'opacity 0.5s';
+    }, { once: true });
+
+    const learnmore = document.getElementById('learnmore1');
+    subheadline.addEventListener('transitionend', function() {
+        learnmore.style.opacity = '1';
+        learnmore.style.transition = 'opacity 0.5s';
+    }, { once: true });
+
+    const logo = document.getElementById('logo1');
+    learnmore.addEventListener('transitionend', function() {
+        const currentPosition4 = headline1.getBoundingClientRect().left;
+        logo1.style.opacity = '1';
+        logo1.style.transition = 'none';
+        logo1.style.left = (currentPosition4 - logo1.offsetWidth) + 'px';
+        void logo1.offsetWidth;
+        logo1.style.transition = 'left 0.5s';
+        logo1.style.left = currentPosition4 + 'px';
+    }, { once: true });
+
+    const replay = document.getElementById('replay1');
+    logo.addEventListener('transitionend', function() {
+        replay.style.opacity = '1';
+        replay.style.transition = 'opacity 0.5s';
+    }, { once: true });
+
+    // function replayAnimation() {
+    //     const elements = document.querySelectorAll('.container > *');
+    //     elements.forEach((element) => {
+    //         element.style.opacity = '0';
+    //         element.style.transition = 'none';
+    //         element.style.transform = 'none';
+    //     });
+    // }
+    // const replayButton = document.getElementById('replay1');
+    // replayButton.addEventListener('click', replayAnimation);
+
+    // replayAnimation();
+});
+
+
+
+
+
+
+
+    
+    
 </script>
 
 
